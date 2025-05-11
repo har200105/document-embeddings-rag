@@ -58,7 +58,7 @@ python manage.py runserver
 
 
 ###  Potential Improvements
-```
+
 - We can leverage Django Channels for efficient real-time streaming and concurrency handling.
 - We can  Utilize asyncio and sync_to_async to enable non-blocking I/O operations.
 - We can consider migrating to FastAPI for a fully asynchronous backend with better performance.
@@ -68,4 +68,3 @@ python manage.py runserver
 -  Integrate function calling or tool use via LangChain Router Agent for multi-modal task handling (e.g., web search, SQL, FAQs).
 - Adding rate limiting and request throttling to prevent abuse and ensure system stability under load.
 - We can store chat message tokens for usage-based analytics and cost estimation per session.
-```
