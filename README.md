@@ -35,24 +35,41 @@ source env/bin/activate  # For macOS/Linux
 ### 3. Install Dependencies
 pip install -r requirements.txt
 
+### 4. Install and Setup Postgres in your system
 
-### 4. Install Redis (macOS Users)
+### 5. Install Redis (macOS Users)
 brew install redis
 brew services start redis
 
 
-### 5. Install Ollama
+### 6. Install Ollama
 Visit https://ollama.com and download Ollama for your operating system. Follow the installation instructions provided on the website.
 
-### 6. Pull Required Models
+### 7. Pull Required Models
 ollama pull llama3
 ollama pull nomic-embed-text
 
-### 7. Run Celery Worker
+### 8. Run Celery Worker
 celery -A documentEmbeddings worker --loglevel=info
 
+### 9. Update the environment variables
+Create a .env file inside documentEmbeddings folder (the main project) 
+and update the env files for the below values:
 
-### 8. Start the Django Server
+```
+DB_NAME=
+DB_PASSWORD=
+DB_USERNAME=
+DB_HOST=
+DB_PORT=
+```
+
+
+### 10. Run the migrations
+Activate the virtualenv and migrate the django models to PSQL
+python manage.py makemigrations && python manage.py migrate
+
+### 11. Start the Django Server
 python manage.py runserver
 
 
