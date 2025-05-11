@@ -1,0 +1,5 @@
+OLLAMA_EMBEDDING_URL = "http://localhost:11434/api/embeddings"
+OLLAMA_EMBEDDING_MODEL = "nomic-embed-text"
+OLLAMA_GENERATE_MODEL = "llama3"  
+OLLAMA_GENERATE_URL = "http://localhost:11434/api/generate"
+ASSET_DIR = "faiss_index_store"
