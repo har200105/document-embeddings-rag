@@ -14,6 +14,8 @@ from .tasks import (generate_document_embeddings,)
 from django.http import StreamingHttpResponse
 from .embeddings import (DocumentEmbedding,)
 from .constants import (ASSET_DIR,OLLAMA_GENERATE_MODEL,OLLAMA_GENERATE_URL,)
+from asgiref.sync import async_to_sync
+
 
 
 logger = logging.getLogger(__name__)

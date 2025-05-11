@@ -1,0 +1,321 @@
+{
+	"info": {
+		"_postman_id": "3f10d829-cf85-42a0-9298-c6a200895e6b",
+		"name": "DocumentEmbeddingsAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "17374407",
+		"_collection_link": "https://crimson-flare-634984.postman.co/workspace/4cd46e82-115d-4345-a44d-a6d3ed943c48/collection/17374407-3f10d829-cf85-42a0-9298-c6a200895e6b?action=share&source=collection_link&creator=17374407"
+	},
+	"item": [
+		{
+			"name": "Process Document",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/Users/harshitrathi/Downloads/HarshitRathiResume_Backend_SEP.pdf"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/documents/process",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"documents",
+						"process"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Assets",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/assets-list",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"assets-list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Start Chat",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"asset_id\":\"15e9e922-b7c2-4c45-9b8a-bc910a1f05f9\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/chat/start",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"chat",
+						"start"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Chat Message",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"chat_id\":\"0237b8f5-e5a4-4eb7-ac63-d34122ccc07e\",\n    \"user_query\":\"What are the primary skills of this resume ?\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8000/api/chat/message",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"chat",
+						"message"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Chat Message",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"chat_id\":\"0237b8f5-e5a4-4eb7-ac63-d34122ccc07e\",\n    \"user_query\":\"A short description of this resume ?\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/chat/message",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"chat",
+								"message"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 11 May 2025 07:50:59 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.13.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/event-stream"
+						},
+						{
+							"key": "X-Accel-Buffering",
+							"value": "no"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "OPTIONS, POST, GET"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "Here's a short description of the resume:\n\n\"Highly motivated and experienced Backend Engineer with expertise in building scalable, AI-powered applications using technologies such as Node.js, Express, GraphQL, Socket.IO, and databases like MySQL, MongoDB, DynamoDB, PostgreSQL. Proficient in designing and developing complex backend systems, APIs, and chatbots. Proven track record of delivering projects on time and exceeding expectations.\""
+				},
+				{
+					"name": "Chat Message",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"chat_id\":\"0237b8f5-e5a4-4eb7-ac63-d34122ccc07e\",\n    \"user_query\":\"A short description of this resume ?\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8000/api/chat/message",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"chat",
+								"message"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "plain",
+					"header": [
+						{
+							"key": "Date",
+							"value": "Sun, 11 May 2025 07:50:59 GMT"
+						},
+						{
+							"key": "Server",
+							"value": "WSGIServer/0.2 CPython/3.13.1"
+						},
+						{
+							"key": "Content-Type",
+							"value": "text/event-stream"
+						},
+						{
+							"key": "X-Accel-Buffering",
+							"value": "no"
+						},
+						{
+							"key": "Cache-Control",
+							"value": "no-cache"
+						},
+						{
+							"key": "Vary",
+							"value": "Accept, Cookie"
+						},
+						{
+							"key": "Allow",
+							"value": "OPTIONS, POST, GET"
+						},
+						{
+							"key": "X-Frame-Options",
+							"value": "DENY"
+						},
+						{
+							"key": "X-Content-Type-Options",
+							"value": "nosniff"
+						},
+						{
+							"key": "Referrer-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Cross-Origin-Opener-Policy",
+							"value": "same-origin"
+						},
+						{
+							"key": "Connection",
+							"value": "close"
+						}
+					],
+					"cookie": [],
+					"body": "Here's a short description of the resume:\n\n\"Highly motivated and experienced Backend Engineer with expertise in building scalable, AI-powered applications using technologies such as Node.js, Express, GraphQL, Socket.IO, and databases like MySQL, MongoDB, DynamoDB, PostgreSQL. Proficient in designing and developing complex backend systems, APIs, and chatbots. Proven track record of delivering projects on time and exceeding expectations.\""
+				}
+			]
+		},
+		{
+			"name": "Chat History",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8000/api/chat/history/0237b8f5-e5a4-4eb7-ac63-d34122ccc07e",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"chat",
+						"history",
+						"0237b8f5-e5a4-4eb7-ac63-d34122ccc07e"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
